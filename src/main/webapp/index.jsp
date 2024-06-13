@@ -55,7 +55,7 @@
     </style>
 </head>
 <body>
-    <h1>కడలి రెస్టారెంట్‌కి స్వాగతం </h1>
+    <h1>WELCOME TO KADALI RESTRAURANT</h1>
     <h2>Menu</h2>
 
     <div id="menu">
