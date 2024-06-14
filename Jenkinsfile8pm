@@ -18,7 +18,7 @@ node {
         stage('deploy') {
             sshagent(['TOMCAT']) {
                 sh """
-                    scp -o StrictHostKeyChecking=no target/${appWar} ubuntu@13.127.176.43:/home/ubuntu/apache-tomcat-9.0.89/bin/webapps/
+                    scp -o StrictHostKeyChecking=no target/${appWar} ubuntu@13.127.176.43:/home/ubuntu/apache-tomcat-9.0.89/webapps/
                     
                     ssh ubuntu@13.127.176.43 /home/ubuntu/apache-tomcat-9.0.89/bin/shutdown.sh
                     ssh ubuntu@13.127.176.43 /home/ubuntu/apache-tomcat-9.0.89/bin/startup.sh
