@@ -14,23 +14,23 @@ pipeline {
                       }
                        
             }
-             stage("depoly"){
+             sshagent(['TOMCAT']){
                   steps{
                      
                        
                        sshagent(['TOMCAT']) {
                        
                        sh """
-                            scp -o StrictHostKeyChecking=no  target/boxfuse-sample-java-war-hello.war ubuntu@13.127.176.43:/home/ubuntu/apache-tomcat-9.0.89/webapps/
+                            scp -o StrictHostKeyChecking=no  target/boxfuse-sample-java-war-hello.war ubuntu@13.232.110.205:/home/ubuntu/apache-tomcat-9.0.89/webapps/
                             
-                            ssh ubuntu@13.127.176.43 /home/ubuntu//apache-tomcat-9.0.89/bin/shutdown.sh
-                            ssh ubuntu@13.127.176.43 /home/ubuntu//apache-tomcat-9.0.89/bin/startup.sh
+                            ssh ubuntu@13.232.110.205 /home/ubuntu/apache-tomcat-9.0.89/bin/shutdown.sh
+                            ssh ubuntu@13.232.110.205 /home/ubuntu/apache-tomcat-9.0.89/bin/startup.sh
                             
                           """
     
 }
                       
-                       }
+                       
             }
        }
   }     
